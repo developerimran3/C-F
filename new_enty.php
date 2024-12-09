@@ -1,3 +1,7 @@
+<?php if (file_exists(__DIR__ . "/autoload.php")) {
+    require_once __DIR__ . "/autoload.PHP";
+}
+?>
 <?php include_once __DIR__ . '/templates/header.php'; ?>
 
 <body class="dashboard dashboard_1">
@@ -54,8 +58,8 @@
                                                 </select>
                                             </div>
                                             <div class="col-md-3">
-                                                <label for="vessel">Vessel</label>
-                                                <input type="text" name="vessel" class="form-control">
+                                                <label for="vassel_name">Vessel Name</label>
+                                                <input type="text" name="vassel_name" class="form-control">
                                             </div>
                                             <div class="col-md-3">
                                                 <label for="bl_no">BL No</label>
@@ -139,7 +143,7 @@
                                                         <tbody>
                                                             <tr class="new_enty_tr">
                                                                 <td>1</td>
-                                                                <td>s ali weaving factory ltd</td>
+                                                                <td> s. ali weaving factory ltd.</td>
                                                                 <td class="font-weight-bold">ARTIFICIAL LEATHER</td>
                                                                 <td>1250 bales</td>
                                                                 <td>maersk vladivostok</td>
@@ -153,6 +157,7 @@
                                                                     <a class="btn btn-sm btn-success" href="#"><i class="fa fa-arrow-circle-right "></i></a>
                                                                 </td>
                                                             </tr>
+
                                                         </tbody>
                                                     </table>
                                                 </div>

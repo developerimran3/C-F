@@ -1,3 +1,8 @@
+<?php if (file_exists(__DIR__ . "/autoload.php")) {
+    require_once __DIR__ . "/autoload.PHP";
+}
+?>
+
 <?php include_once __DIR__ . '/templates/header.php'; ?>
 
 <body class="dashboard dashboard_1">
@@ -28,11 +33,11 @@
                                         <h2>Documents Details</h2>
                                         <hr class="m-0">
                                     </div>
-                                    <form action="">
+                                    <form id="received" method="POST">
                                         <div class="row">
                                             <div class="col-md-3">
-                                                <label for="document_receiver">Document Receiver</label>
-                                                <input type="date" name="document_receiver" class="form-control" placeholder="Document Receiver">
+                                                <label for="document_received">Document Receiver</label>
+                                                <input type="date" name="document_received" class="form-control" placeholder="Document Receiver">
                                             </div>
                                             <div class="col-md-3">
                                                 <label for="invoice_value">Invoice Value</label>
@@ -113,6 +118,8 @@
                                                 <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
                                                 <script src="https://cdn.datatables.net/v/bs5/jq-3.7.0/dt-2.1.7/datatables.min.js"></script>
                                                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+                                                <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                                                <script src="./ajax/ajax.js"></script>
                                                 <script>
                                                     $("#dataTable").DataTable();
                                                 </script>

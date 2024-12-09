@@ -7,7 +7,7 @@
 function connect()
 {
     try {
-        $connection = new PDO("mysql:host=localhost;dbname=recent", "recent", "123456");
+        $connection = new PDO("mysql:host=localhost;dbname=recent", "akj", "asdfg123");
         return $connection;
     } catch (PDOException $error) {
         echo $error->getMessage();
