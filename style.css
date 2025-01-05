@@ -117,12 +117,14 @@
   background-color: #b6c6d9;
   text-align: center;
   padding: 5px;
+  font-size: 14px;
 }
 .register_enty td {
   text-align: center;
   vertical-align: middle;
   padding: 0;
   text-transform: uppercase;
+  font-size: 14px;
 }
 
 .register_enty th:nth-child(2) {
@@ -291,6 +293,10 @@
 .sonali_bank th:nth-child(2) {
   width: 20%;
 }
+
+/*------------------------------------------------------------------
+    Body Page
+-------------------------------------------------------------------*/
 
 html,
 body {

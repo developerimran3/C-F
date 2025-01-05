@@ -1,3 +1,4 @@
+?>
 <?php include_once __DIR__ . '/templates/header.php'; ?>
 
 <body class="dashboard dashboard_1">
@@ -10,7 +11,6 @@
             <div id="content">
                 <!-- topbar -->
                 <?php include_once __DIR__ . '/templates/topbar.php'; ?>
-
                 <!-- end topbar -->
                 <div class="midde_cont">
                     <div class="container-fluid">
@@ -28,7 +28,7 @@
                                         <h2>Documents Details</h2>
                                         <hr class="m-0">
                                     </div>
-                                    <form action="">
+                                    <form id="register" method="POST">
                                         <div class="row">
                                             <div class="col-md-3">
                                                 <label for="be_no">B/E Number</label>
@@ -41,7 +41,7 @@
                                             <div class="col-md-3">
                                                 <label for="be_lane">B/E Lane</label>
                                                 <select name="be_lane" id="" class="form-control">
-                                                    <option hidden>B/E LANE</option>
+                                                    <option hidden>Select One</option>
                                                     <option value="YELLOW">YELLOW LANE</option>
                                                     <option value="20' FCL">RED LALE</option>
                                                 </select>
@@ -106,6 +106,8 @@
                                                 <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
                                                 <script src="https://cdn.datatables.net/v/bs5/jq-3.7.0/dt-2.1.7/datatables.min.js"></script>
                                                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+                                                <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                                                <script src="./ajax/ajax.js"></script>
                                                 <script>
                                                     $("#dataTable").DataTable();
                                                 </script>

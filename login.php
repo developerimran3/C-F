@@ -1,57 +1,79 @@
-<?php include_once __DIR__ . '/templates/header.php'; ?>
+<?php
 
-<body class="inner_page login">
-    <div class="full_container">
-        <div class="container">
-            <div class="center verticle_center full_height">
-                <div class="login_section">
-                    <div class="logo_login">
-                        <div class="center">
-                            <img width="210" src="images/logo/logo.png" alt="#" />
-                        </div>
-                    </div>
-                    <div class="login_form">
-                        <form>
-                            <fieldset>
-                                <div class="field">
-                                    <label class="label_field">Email Address</label>
-                                    <input type="email" name="email" placeholder="E-mail" />
+if (file_exists(__DIR__ . "/autoload.php")) {
+    require_once(__DIR__ . "/autoload.php");
+} else {
+    echo "autoload.php not found";
+} ?>
+
+
+?>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Login, Registration & Forgot Form Design</title>
+    <!-- Bootstrap 4 CSS CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css" />
+    <!-- Fontawesome CSS CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body class="bg-info">
+    <div class="container">
+        <!-- Login Form Start -->
+        <div class="row justify-content-center wrapper" id="login-box">
+            <div class="col-lg-10 my-auto myShadow">
+                <div class="row">
+                    <div class="col-lg-7 bg-white p-4">
+                        <h1 class="text-center font-weight-bold text-primary">Sign in to Account</h1>
+                        <hr class="my-3" />
+                        <form action="#" method="POST" class="px-3" id="login-form">
+                            <div class="input-group input-group-lg form-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text rounded-0"><i class="far fa-envelope fa-lg fa-fw"></i></span>
                                 </div>
-                                <div class="field">
-                                    <label class="label_field">Password</label>
-                                    <input type="password" name="password" placeholder="Password" />
+                                <input type="email" id="email" name="email" class="form-control rounded-0" placeholder="E-Mail" required />
+                            </div>
+                            <div class="input-group input-group-lg form-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text rounded-0"><i class="fas fa-key fa-lg fa-fw"></i></span>
                                 </div>
-                                <div class="field">
-                                    <label class="label_field hidden">hidden label</label>
-                                    <label class="form-check-label"><input type="checkbox" class="form-check-input"> Remember Me</label>
-                                    <a class="forgot" href="">Forgotten Password?</a>
+                                <input type="password" id="password" name="password" class="form-control rounded-0" minlength="5" placeholder="Password" required autocomplete="off" />
+                            </div>
+                            <div class="form-group clearfix">
+                                <div class="custom-control custom-checkbox float-left">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck" name="rem" />
+                                    <label class="custom-control-label" for="customCheck">Remember me</label>
                                 </div>
-                                <div class="field margin_0">
-                                    <label class="label_field hidden">hidden label</label>
-                                    <button class="main_bt">Sing In</button>
+                                <div class="forgot float-right">
+                                    <a href="./reset.php" id="forgot-link">Forgot Password?</a>
                                 </div>
-                            </fieldset>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" id="login-btn" value="Sign In" class="btn btn-primary btn-lg btn-block myBtn" />
+                            </div>
                         </form>
+                    </div>
+                    <div class="col-lg-5 d-flex flex-column justify-content-center myColor p-4">
+                        <h1 class="text-center font-weight-bold text-white">Hello Friends!</h1>
+                        <hr class="my-3 bg-light myHr" />
+                        <p class="text-center font-weight-bolder text-light lead">Enter your personal details and start your journey with us!</p>
+                        <a class="btn btn-outline-light btn-lg align-self-center font-weight-bolder mt-4 myLinkBtn" href="./index.php" id="register-link">Sign Up</a>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- Login Form End -->
+
     </div>
-    <!-- jQuery -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <!-- wow animation -->
-    <script src="js/animate.js"></script>
-    <!-- select country -->
-    <script src="js/bootstrap-select.js"></script>
-    <!-- nice scrollbar -->
-    <script src="js/perfect-scrollbar.min.js"></script>
-    <script>
-        var ps = new PerfectScrollbar('#sidebar');
-    </script>
-    <!-- custom js -->
-    <script src="js/custom.js"></script>
+    <!-- jQuery CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+
 </body>
 
 </html>

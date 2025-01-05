@@ -1,4 +1,7 @@
 $(document).ready(function () {
+  /**
+   * New Data enty
+   */
   $("#new_enty_form").submit(function (e) {
     e.preventDefault();
     //get form data
@@ -21,7 +24,7 @@ $(document).ready(function () {
 
     //form valadition
     if (!importer_name || !goods_name || !quantity) {
-      Swal.fire("all fields are requerd !");
+      Swal.fire("Fields Are Requerd !");
     } else {
       $.ajax({
         url: "./ajax/ajax.php?action=entydata",
@@ -33,7 +36,7 @@ $(document).ready(function () {
           Swal.fire({
             position: "top-center",
             icon: "success",
-            title: "Your work has been saved",
+            title: "Data Create Sucessful",
             showConfirmButton: false,
             timer: 2000,
           });
@@ -44,7 +47,7 @@ $(document).ready(function () {
   });
 
   /**
-   * received to enty
+   * received Data enty
    */
   $("#received").submit(function (e) {
     e.preventDefault();
@@ -66,7 +69,7 @@ $(document).ready(function () {
       !invoice_date ||
       !net_weight
     ) {
-      Swal.fire("All Fields are Requerd !");
+      Swal.fire("Fields Are Requerd !");
     } else {
       $.ajax({
         url: "./ajax/ajax.php?action=received",
@@ -78,7 +81,74 @@ $(document).ready(function () {
           Swal.fire({
             position: "top-center",
             icon: "success",
-            title: "Your work has been saved",
+            title: "Data Create Sucessful",
+            showConfirmButton: false,
+            timer: 2000,
+          });
+          e.target.reset();
+        },
+      });
+    }
+  });
+
+  /**
+   * register Data enty
+   */
+  $("#register").submit(function (e) {
+    e.preventDefault();
+    //get form data
+    const forms_data = new FormData(e.target);
+    const { be_no, be_date, be_lane } = Object.fromEntries(forms_data);
+
+    //form valadition
+    if (!be_no || !be_date || !be_lane) {
+      Swal.fire("Fields Are Requerd !");
+    } else {
+      $.ajax({
+        url: "./ajax/ajax.php?action=register",
+        method: "POST",
+        data: forms_data,
+        contentType: false,
+        processData: false,
+        success: (data) => {
+          Swal.fire({
+            position: "top-center",
+            icon: "success",
+            title: "Data Create Sucessful",
+            showConfirmButton: false,
+            timer: 2000,
+          });
+          e.target.reset();
+        },
+      });
+    }
+  });
+  /**
+   * assessment Data enty
+   */
+
+  $("#assessment").submit(function (e) {
+    e.preventDefault();
+    //get form data
+    const forms_data = new FormData(e.target);
+    const { assessment_date, r_no, x_no, scann_document } =
+      Object.fromEntries(forms_data);
+
+    //form valadition
+    if (!assessment_date || !r_no || !x_no || !scann_document) {
+      Swal.fire("Fields Are Requerd !");
+    } else {
+      $.ajax({
+        url: "./ajax/ajax.php?action=assessment",
+        method: "POST",
+        data: forms_data,
+        contentType: false,
+        processData: false,
+        success: (data) => {
+          Swal.fire({
+            position: "top-center",
+            icon: "success",
+            title: "Data Create Sucessful",
             showConfirmButton: false,
             timer: 2000,
           });

@@ -1,3 +1,8 @@
+<?php
+if (file_exists(__DIR__ . "/autoload.phpp")) {
+    require_once __DIR__ . "/autoload.phpp";
+}
+?>
 <?php include_once __DIR__ . '/templates/header.php'; ?>
 
 <body class="dashboard dashboard_1">
@@ -28,7 +33,7 @@
                                         <h2>Documents Details</h2>
                                         <hr class="m-0">
                                     </div>
-                                    <form action="">
+                                    <form id="assessment" method="POST">
                                         <div class="row">
                                             <div class="col-md-3">
                                                 <label for="assessment_date">Assessment Date</label>
@@ -40,7 +45,7 @@
                                             </div>
                                             <div class="col-md-3">
                                                 <label for="x_no">X No</label>
-                                                <input type="number" name="x-no" class="form-control">
+                                                <input type="number" name="x_no" class="form-control">
                                             </div>
                                             <div class="col-md-3">
                                                 <label for="scann_document">Scann Document</label>
@@ -104,9 +109,12 @@
                                                     </table>
                                                 </div>
                                                 <!-- table end -->
+
                                                 <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
                                                 <script src="https://cdn.datatables.net/v/bs5/jq-3.7.0/dt-2.1.7/datatables.min.js"></script>
                                                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+                                                <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                                                <script src="./ajax/ajax.js"></script>
                                                 <script>
                                                     $("#dataTable").DataTable();
                                                 </script>

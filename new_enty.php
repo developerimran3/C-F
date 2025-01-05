@@ -1,7 +1,3 @@
-<?php if (file_exists(__DIR__ . "/autoload.php")) {
-    require_once __DIR__ . "/autoload.PHP";
-}
-?>
 <?php include_once __DIR__ . '/templates/header.php'; ?>
 
 <body class="dashboard dashboard_1">
@@ -49,7 +45,7 @@
                                             <div class="col-md-3">
                                                 <label for="pkg_code">Pkgs Code</label>
                                                 <select name="pkg_code" id="" class="form-control">
-                                                    <option hidden></option>
+                                                    <option hidden>Select One</option>
                                                     <option value="ROLLS">ROLLS</option>
                                                     <option value="PKGS">PKGS</option>
                                                     <option value="BALES">BALES</option>
@@ -72,7 +68,7 @@
                                             <div class="col-md-3">
                                                 <label for="container_size">Container Size</label>
                                                 <select name="container_size" id="" class="form-control">
-                                                    <option hidden></option>
+                                                    <option hidden>Select One</option>
                                                     <option value="20' FCL">20' FCL</option>
                                                     <option value="40' FCL">40' FCL</option>
                                                     <option value="20' LCL">20' LCL</option>
