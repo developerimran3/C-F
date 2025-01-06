@@ -1,4 +1,12 @@
+<?php
+if (file_exists(__DIR__ . "/../autoload.php")) {
+    require_once __DIR__ . "/../autoload.php";
+}
+?>
+
 <?php include_once __DIR__ . '/templates/header.php'; ?>
+
+
 
 <body class="dashboard dashboard_1">
     <div class="full_container">

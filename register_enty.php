@@ -1,3 +1,7 @@
+<?php
+if (file_exists(__DIR__ . "/autoload.phpp")) {
+    require_once __DIR__ . "/autoload.phpp";
+}
 ?>
 <?php include_once __DIR__ . '/templates/header.php'; ?>
 
@@ -11,6 +15,7 @@
             <div id="content">
                 <!-- topbar -->
                 <?php include_once __DIR__ . '/templates/topbar.php'; ?>
+
                 <!-- end topbar -->
                 <div class="midde_cont">
                     <div class="container-fluid">
@@ -60,7 +65,7 @@
                             <div class="col-md-12">
                                 <div class="white_shd full p-4">
                                     <div class="heading1 m-0 p-0">
-                                        <h2 class="">All Registered Documents</h2>
+                                        <h2 class="">All Assessment Documents</h2>
                                     </div>
                                     <div class="row column1">
                                         <div class="col-md-12">
@@ -103,6 +108,7 @@
                                                     </table>
                                                 </div>
                                                 <!-- table end -->
+
                                                 <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
                                                 <script src="https://cdn.datatables.net/v/bs5/jq-3.7.0/dt-2.1.7/datatables.min.js"></script>
                                                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

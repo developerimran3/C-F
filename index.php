@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
             'password'  => $pass_hash,
         ]);
         reset_form();
-        $msg = createAlert("Registration successful", 'success');
+        header("location:login.php");
     }
 }
 
