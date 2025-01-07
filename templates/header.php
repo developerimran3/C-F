@@ -3,12 +3,38 @@ if (file_exists(__DIR__ . "/../autoload.php")) {
   require_once __DIR__ . "/../autoload.php";
 }
 
+/**
+ * Log out system
+ */
 session_start();
 ?>
 <?php if (isset($_GET['logout']) && $_GET['logout'] == 'success') {
+  /**
+   * session destroy
+   */
+
   session_destroy();
+
+  /**
+   *  cookie destroy
+   */
+  setcookie('user_login_id', '', time() - (60 * 60 * 365 * 10));
+
+
   header("location:login.php");
-} ?>
+}
+
+/**
+ * Profile Page Access Security
+ */
+
+if (!isset($_SESSION['id']) && !isset($_SESSION['name']) && !isset($_SESSION['email'])) {
+  header("location:login.php");
+}
+
+?>
+
+
 
 
 <!DOCTYPE html>

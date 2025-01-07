@@ -4,6 +4,40 @@ if (file_exists(__DIR__ . "/autoload.php")) {
     require_once(__DIR__ . "/autoload.php");
 } ?>
 
+<?php
+session_start();
+/**
+ * Relogin System for cookie
+ */
+if (isset($_COOKIE['user_login_id'])) {
+
+    $user_id = $_COOKIE['user_login_id'];
+    $sql = "SELECT * FROM users WHERE id=' $user_id' ";
+    $data = connect()->query($sql);
+    $login_pass = $data->fetch(PDO::FETCH_ASSOC);
+
+    /**
+     * Session Manage
+     */
+    $_SESSION['id']         = $login_pass['id'];
+    $_SESSION['username']   = $login_pass['username'];
+    $_SESSION['name']       = $login_pass['name'];
+    $_SESSION['email']      = $login_pass['email'];
+
+    /**
+     * redirect profilr page
+     */
+    header("location:dashboard.php");
+}
+
+/**
+ * Profile Page Access Security
+ */
+
+if (isset($_SESSION['id']) && isset($_SESSION['name']) && isset($_SESSION['email'])) {
+    header("location:dashboard.php");
+} ?>
+
 
 <html lang="en">
 
@@ -36,12 +70,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['signin'])) {
         $count = $data->rowCount();
         if ($count == 1) {
             if (password_verify($password,  $login_pass['password']) == true) {
-                session_start();
+                /**
+                 * Session Manage
+                 */
                 $_SESSION['id']         = $login_pass['id'];
                 $_SESSION['username']   = $login_pass['username'];
                 $_SESSION['name']       = $login_pass['name'];
                 $_SESSION['email']      = $login_pass['email'];
 
+                /**
+                 * set cookie for relogin
+                 */
+                setcookie('user_login_id', $login_pass['id'], time() + (60 * 60 * 365 * 10));
+
+                /**
+                 * redirect profilr page
+                 */
                 header("location:dashboard.php");
             } else {
                 $msg = createAlert("Wrong passwordl!");
